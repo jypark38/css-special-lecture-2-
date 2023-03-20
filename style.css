@@ -6,6 +6,10 @@
 	*/
 }
 
+ul{
+	list-style: none;
+}
+
 h1, h2, h3, p, ul, li{
 	margin: 0;
 	font-weight: initial;
@@ -41,12 +45,6 @@ li{
 	margin-left: -24px;
 }
 
-li::marker{
-	list-style: circle;
-	font-size: 30px;
-	color: #bd8fe8;
-}
-
 body {
 	background-color: #673399;
 }
@@ -56,16 +54,26 @@ body {
 	width: 1080px;
 	margin: 100px auto;
 
-	box-shadow: inset 0 0 10px green;
 }
 
 .wrapper > header, .wrapper > section {
 	display: flex;
 }
 
-
+/* header */
 header{
 	margin-bottom: 100px;
+}
+
+.title {
+	width: 26%;
+}
+
+.title-underline{
+	width: 100%;
+	height: 24px;
+	background-color: orangered;
+	margin-top: -24px;
 }
 
 .header-text{
@@ -81,7 +89,14 @@ h1 > div {
 	position: relative;
 }
 
+header > span{
+	width: 100px;
+	height: 0;
+	border-top : 1px solid #bd8fe8;
+	align-self: center;
+}
 
+/* section */
 section {
 	margin-bottom: 24px;
 }
@@ -93,11 +108,6 @@ section:nth-of-type(2n){
 
 section:last-child{
 	margin-bottom: 0px;
-}
-
-.title {
-	width: 26%;
-	box-shadow: 0 0 10px;
 }
 
 section .title{
@@ -143,8 +153,24 @@ section .title::before{
 
 .section-content{
 	background-color: white;
-	box-shadow: inset 0 0 10px gold;
 
 	padding: 24px;
 	flex-grow: 1;
+}
+
+.section-content p {
+	color: black;
+}
+
+.section-content li::before {
+	display: inline-block;
+	content: "";
+	width: 10px;
+	height: 10px;
+
+	margin-right: 0.8em;
+
+	background: #bd8fe8;
+
+	border-radius: 5px;
 }
