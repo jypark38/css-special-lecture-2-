@@ -70,6 +70,7 @@ header{
 	width: 26%;
 }
 
+/* box shadow로 구현이 되네,,? */
 .title-underline{
 	display: block;
 	width: 100%;
