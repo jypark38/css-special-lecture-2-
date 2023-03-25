@@ -6,13 +6,14 @@
 	*/
 }
 
-h1, h2, h3, p, ul, li{
+body, h1, h2, h3, p, ul, li{
 	margin: 0;
 	font-weight: initial;
 }
 
-ul{
+ul,li{
 	list-style: none;
+	padding: 0;
 }
 
 h1 {
@@ -25,6 +26,7 @@ h2 {
 	font-size: 30px;
 	color: white;
 	font-weight: 500;
+	z-index: 1;
 }
 
 h3 {
@@ -42,19 +44,24 @@ p{
 li{
 	font-size: 14px;
 	margin-bottom: 10px;
-	margin-left: -24px;
 }
 
-body {
+li:last-child{
+	margin-bottom: 0;
+}
+
+.section-purple {
 	background-color: #673399;
+	width: 100%;
+	padding-top: 100px;
+	padding-bottom: 100px;
 }
 
 /* content */
 
 .wrapper{
 	width: 1080px;
-	margin: 100px auto;
-
+	margin: 0 auto
 }
 
 .wrapper > header, .wrapper > section {
@@ -68,6 +75,11 @@ header{
 
 .title {
 	width: 26%;
+	flex-shrink: 0;
+}
+
+header > .title{
+	align-self: center;
 }
 
 /* box shadow로 구현이 되네,,? */
@@ -95,6 +107,7 @@ header > span{
 	width: 100px;
 	border-top : 1px solid #bd8fe8;
 	align-self: center;
+	flex-shrink: 0;
 }
 
 /* section */
@@ -115,7 +128,9 @@ section .title{
 	justify-content: center;
 	align-items: center;
 
-	position : relative
+	position : relative;
+
+	flex-shrink: 0;
 }
 
 .Rest::before {
@@ -140,11 +155,6 @@ section .title::before{
 	position: absolute;
 	top:0;
 	left: 0;
-	z-index: -1;
-	opacity: 0.6;
-}
-
-section .title:hover::before{
 	opacity: 0.8;
 }
 
@@ -155,23 +165,23 @@ section .title:hover::before{
 	flex-grow: 1;
 }
 
-.section-content p {
-	color: black;
-}
-
-.section-content ul{
-	margin-left: -14px;
-}
-
 .section-content li::before {
 	display: inline-block;
 	content: "";
 	width: 10px;
 	height: 10px;
 
-	margin-right: 0.8em;
-
 	background: #bd8fe8;
+	
+	margin-right: 10px;
 
 	border-radius: 5px;
+}
+
+.section-content ul{
+	padding-left: 24px;
+}
+
+.section-content li{
+	text-indent : -20px;
 }
