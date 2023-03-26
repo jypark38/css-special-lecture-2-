@@ -147,6 +147,7 @@ li:last-child{
 
 .Scrap::before{
 	background-image: url(./images/photo03.png);
+	object-fit: cover;
 }
 
 .section .section-title::before{
