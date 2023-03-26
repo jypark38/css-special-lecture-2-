@@ -1,3 +1,5 @@
+/*  */
+
 :root {
     font-family: 'Montserrat', sans-serif;
 	/*
@@ -18,7 +20,6 @@ ul,li{
 
 h1 {
 	font-size: 40px;
-	color: white;
 	font-weight: 500;
 }
 
@@ -50,7 +51,9 @@ li:last-child{
 	margin-bottom: 0;
 }
 
-.section-purple {
+/* purple */
+
+.purple {
 	background-color: #673399;
 	width: 100%;
 	padding-top: 100px;
@@ -69,17 +72,23 @@ li:last-child{
 }
 
 /* header */
-header{
+.header{
 	margin-bottom: 100px;
 }
 
-.title {
+.section-title, .header-title {
+	color: white;
 	width: 26%;
 	flex-shrink: 0;
 }
 
-header > .title{
+.header > .header-title{
 	align-self: center;
+}
+
+.header-title > .title-wrap {
+	display: block;
+	width: fit-content;
 }
 
 /* box shadow로 구현이 되네,,? */
@@ -91,6 +100,13 @@ header > .title{
 	margin-top: -20px;
 }
 
+.header > .line{
+	width: 100px;
+	border-top : 1px solid #bd8fe8;
+	align-self: center;
+	flex-shrink: 0;
+}
+
 .header-text{
 	height: fit-content;
 	padding: 24px;
@@ -98,32 +114,20 @@ header > .title{
 	line-height: calc(14px * 1.6);
 }
 
-h1 > span {
-	display: block;
-	width: fit-content;
-}
-
-header > span{
-	width: 100px;
-	border-top : 1px solid #bd8fe8;
-	align-self: center;
-	flex-shrink: 0;
-}
-
 /* section */
-section {
+.section {
 	margin-bottom: 24px;
 }
 
-section:nth-of-type(2n){
+.section:nth-of-type(2n){
 	flex-direction: row-reverse;
 }
 
-section:last-child{
+.section:last-child{
 	margin-bottom: 0px;
 }
 
-section .title{
+.section .section-title{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -145,7 +149,7 @@ section .title{
 	background-image: url(./images/photo03.png);
 }
 
-section .title::before{
+.section .section-title::before{
 	width: 100%;
 	height: 100%;
 	content: "";
@@ -156,6 +160,7 @@ section .title::before{
 	top:0;
 	left: 0;
 	opacity: 0.8;
+	z-index: -1;
 }
 
 .section-content{
@@ -165,7 +170,16 @@ section .title::before{
 	flex-grow: 1;
 }
 
-.section-content li::before {
+
+.section-content .content-disc{
+	padding-left: 24px;
+}
+
+.content-disc li{
+	text-indent : -20px;
+}
+
+.content-disc li::before {
 	display: inline-block;
 	content: "";
 	width: 10px;
@@ -176,12 +190,4 @@ section .title::before{
 	margin-right: 10px;
 
 	border-radius: 5px;
-}
-
-.section-content ul{
-	padding-left: 24px;
-}
-
-.section-content li{
-	text-indent : -20px;
 }
